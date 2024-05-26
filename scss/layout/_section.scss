@@ -1,0 +1,22 @@
+@use "../global" as *;
+
+/*!
+layout > section
+------------------------------
+*/
+.section {
+  // セクション間の上下余白
+  padding: 64px 0;
+
+  @include mq(md) {
+    padding: 80px 0;
+  }
+
+  &-body {
+    padding: 40px 0;
+
+    @include mq(md) {
+      padding: 48px 0;
+    }
+  }
+}

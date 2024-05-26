@@ -1,0 +1,216 @@
+@use "../global" as *;
+
+/*!
+component > input > text/email
+------------------------------
+*/
+
+// .form-text {
+//   width: 100%;
+//   border-radius: 5px;
+//   border: 3px solid var(--color-black);
+//   background: var(--color-white);
+//   // border分を考慮
+//   padding: calc(15px - 3px) calc(16px - 3px) calc(14px - 3px);
+//   transition: border-color 0.3s;
+
+//   &:hover,
+//   &:focus {
+//     border-color: var(--color-yellow);
+//     outline: none;
+//   }
+// }
+
+// /*!
+// component > input > radio
+// ------------------------------
+// */
+
+// .form-radio {
+//   line-height: calc(23px / 16px); // 23px
+
+//   // ラジオボタンhoverでアニメーションする場合
+//   // &:hover {
+//   //   .form-radio__text {
+//   //     &::before {
+//   //       border-color: var(--color-yellow);
+//   //     }
+//   //   }
+//   // }
+// }
+
+// .form-radio__input {
+//   // ブラウザデフォルトのラジオボタンを消す方法（reset.cssで指定なしの場合）
+//   // width: 1px;
+//   // height: 1px;
+//   // position: absolute;
+//   // clip: rect(0, 0, 0, 0);
+//   // overflow: hidden;
+
+//   // ラジオボタンがチェックされた時だけ中の丸が表示される
+//   &:checked {
+//     + .form-radio__text {
+//       &::after {
+//         opacity: 1;
+//       }
+//     }
+//   }
+
+//   &:focus {
+//     + .form-radio__text {
+//       &::before {
+//         border: 3px solid var(--color-orange);
+//       }
+//     }
+//   }
+// }
+
+// .form-radio__text {
+//   font-weight: 700;
+//   padding-left: calc(24px + 4px);
+//   position: relative;
+
+//   // ラジオボタンの擬似要素
+//   &::after,
+//   &::before {
+//     content: "";
+//     position: absolute;
+//     top: 50%;
+//     transform: translateY(-50%);
+//     border-radius: 50%;
+//   }
+
+//   // ラジオボタンの枠
+//   &::before {
+//     width: 24px;
+//     height: 24px;
+//     border: 3px solid var(--color-black);
+//     left: 0;
+//     // ラジオボタンhoverでアニメーションする場合
+//     transition: border-color 0.3s;
+//   }
+
+//   // ラジオボタンの中身
+//   &::after {
+//     width: 10px;
+//     height: 10px;
+//     background: var(--color-orange);
+//     left: 7px;
+//     opacity: 0;
+//   }
+// }
+
+// /*!
+// component > select
+// ------------------------------
+// */
+// .form-select {
+//   width: 100%;
+//   border-radius: 5px;
+//   border: 3px solid var(--color-black);
+//   background: var(--color-white);
+//   font-weight: 700;
+//   // border分を考慮
+//   padding: calc(15px - 3px) calc(46px - 3px) calc(14px - 3px) calc(16px - 3px);
+//   // arrowアイコンは背景画像として配置
+//   background: url(../../images/select-arrow.png) no-repeat center right 18px / 9.451px 6.969px;
+
+//   transition: border-color 0.3s;
+
+//   &:hover,
+//   &:focus {
+//     border-color: var(--color-yellow);
+//     outline: none;
+//   }
+// }
+
+// /*!
+// component > textarea
+// ------------------------------
+// */
+// .form-textarea {
+//   width: 100%;
+//   height: 180px;
+//   border-radius: 5px;
+//   border: 3px solid var(--color-black);
+//   background: var(--color-white);
+//   // border分を考慮
+//   padding: calc(16px - 3px);
+
+//   transition: border-color 0.3s;
+
+//   &:hover,
+//   &:focus {
+//     border-color: var(--color-yellow);
+//     outline: none;
+//   }
+// }
+
+// /*!
+// component > input > checkbox
+// ------------------------------
+// */
+// .form-checkbox {
+// }
+
+// .form-checkbox__input {
+//   // デフォルトcheckboxを非表示に
+//   // height: 1px;
+//   // position: absolute;
+//   // clip: rect(0, 0, 0, 0);
+//   // overflow: hidden;
+
+//   &:checked {
+//     + .form-checkbox__text {
+//       &::after {
+//         opacity: 1;
+//       }
+//     }
+//   }
+// }
+
+// .form-checkbox__text {
+//   position: relative;
+//   padding-left: calc(20px + 10px);
+//   font-size: 14px;
+//   font-weight: 700;
+
+//   // チェックボックス作成
+//   &::before,
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     left: 0;
+//     top: 50%;
+//     transform: translateY(-50%);
+//   }
+
+//   // チェックボックスの外枠
+//   &::before {
+//     border-radius: 1px;
+//     border: 1px solid var(--color-black);
+//     width: 20px;
+//     height: 20px;
+//   }
+
+//   // チェックボックスのチェック部分
+//   &::after {
+//     width: 23px;
+//     height: 17.53px;
+//     left: -1px;
+//     margin-bottom: 1.2px;
+//     background: url(../../images/check-icon.png) no-repeat center center / contain;
+//     opacity: 0;
+//   }
+
+//   a {
+//     text-decoration-line: underline;
+//     // 親要素を継承
+//     font-weight: inherit;
+//     transition: color 0.3s;
+
+//     &:hover {
+//       color: var(--color-orange);
+//     }
+//   }
+// }

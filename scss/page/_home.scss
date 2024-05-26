@@ -1,0 +1,1569 @@
+@use "../global" as *;
+
+// はみ出し検証用
+// * {
+//   outline: 2px solid blue;
+// }
+
+// .hidden-sp {
+//   display: none;
+//   @include mq(md) {
+//     display: inline-block;
+//   }
+// }
+
+// .hidden-pc {
+//   @include mq(md) {
+//     display: none;
+//   }
+// }
+
+// .inline-block {
+//   // 幅を小さくしたときに改行する位置を指定（htmlで）
+//   display: inline-block;
+// }
+
+// // Intersection Observer用
+// // デフォルトは非表示にしておく
+// .fade-in-up {
+//   opacity: 0;
+//   transform: translateY(24px);
+//   transition: opacity 1s, transform 1s;
+
+//   &.is-in-view {
+//     opacity: 1;
+//     transform: translateY(0);
+//   }
+// }
+
+// .fade-in {
+//   opacity: 0;
+//   transition: opacity 1s;
+
+//   &.is-in-view {
+//     opacity: 1;
+//   }
+// }
+
+// /*!
+// mv
+// ------------------------------
+// */
+// .mv {
+//   border-radius: 20px;
+//   // 最大幅は左右の余白15pxを確保した幅にする
+//   max-width: calc(100% - 15px * 2);
+//   margin-left: auto;
+//   margin-right: auto;
+//   background: var(--color-gradation);
+
+//   @include mq(md) {
+//     border-radius: 30px;
+//     max-width: calc(100% - 30px * 2);
+//   }
+// }
+
+// .mv__inner {
+//   padding: 50px 20px 255px;
+//   // 画像の位置配置のため
+//   position: relative;
+
+//   @include mq(md) {
+//     padding-top: 110px;
+//     padding-bottom: 109px;
+//     padding-left: 30px;
+//     padding-right: 30px;
+//     max-width: calc(1040px + 30px * 2);
+//     margin-left: auto;
+//     margin-right: auto;
+//   }
+// }
+
+// .mv__content {
+// }
+
+// .mv__lead {
+// }
+
+// .mv__lead1,
+// .mv__lead2 {
+//   // 「」の文字詰め用
+//   font-feature-settings: "palt" on;
+//   font-size: 22px;
+//   font-weight: 700;
+//   line-height: 1;
+//   letter-spacing: 2.2px;
+//   border-radius: 5px;
+//   background: #fff;
+//   padding: 10px;
+//   display: block;
+//   // 文字のサイズに応じて幅が可変
+//   width: fit-content;
+//   margin-left: auto;
+//   margin-right: auto;
+
+//   @include mq(md) {
+//     margin-left: 0;
+//     margin-right: 0;
+//     font-size: 38px;
+//     letter-spacing: 3.8px;
+//     padding: 12px 16px;
+//   }
+// }
+
+// .mv__lead1 {
+// }
+
+// .mv__lead2 {
+//   margin-top: 8px;
+
+//   @include mq(md) {
+//     margin-top: 14px;
+//   }
+// }
+
+// .mv__description {
+//   text-align: center;
+//   letter-spacing: 0.48px;
+//   font-weight: 700;
+//   margin-top: 26px;
+
+//   @include mq(md) {
+//     text-align: left;
+//     font-size: 18px;
+//     letter-spacing: 0.54px;
+//     margin-top: 20px;
+//   }
+// }
+
+// .mv__button {
+//   margin-top: 22px;
+//   text-align: center;
+
+//   @include mq(md) {
+//     text-align: left;
+//     margin-top: 30px;
+//   }
+// }
+
+// .mv__image {
+//   position: absolute;
+//   right: 0;
+//   bottom: -108px;
+//   width: 100%;
+//   text-align: center;
+
+//   @include mq(md) {
+//     width: calc(600px / 1040px * 100%);
+//     text-align: right;
+//     bottom: -88px;
+//     right: 30px;
+//   }
+
+//   img {
+//     width: 345px;
+
+//     @include mq(md) {
+//       // width: 600px;
+//       // 画像の最大幅を600pxに制限
+//       max-width: 600px;
+//       width: 100%;
+//       // アスペクト比を維持したまま幅に合わせて高さを自動調整
+//       height: auto;
+//     }
+//   }
+// }
+
+// /*!
+// case
+// ------------------------------
+// */
+// .case {
+//   margin-top: 108px;
+//   padding-top: 60px;
+//   padding-bottom: 60px;
+
+//   @include mq(md) {
+//     margin-top: 88px;
+//     padding-top: 70px;
+//     padding-bottom: 50px;
+//   }
+// }
+
+// .case__inner {
+//   padding-left: 40px;
+//   padding-right: 40px;
+
+//   @include mq(md) {
+//     max-width: calc(920px + 40px * 2);
+//     margin-left: auto;
+//     margin-right: auto;
+//   }
+// }
+
+// .case__title {
+//   font-size: 18px;
+//   font-weight: 700;
+//   line-height: 1;
+//   letter-spacing: 1.8px;
+//   text-align: center;
+
+//   @include mq(md) {
+//     font-size: 20px;
+//     letter-spacing: 2px;
+//   }
+// }
+
+// .case__items {
+//   margin-top: 30px;
+//   display: grid;
+//   grid-template-columns: repeat(2, 1fr);
+//   gap: 22px 15px;
+
+//   @include mq(md) {
+//     margin-top: 54px;
+//     grid-template-columns: repeat(4, 1fr);
+//     gap: 26px 40px;
+//   }
+// }
+
+// .case__item {
+//   text-align: center;
+
+//   img {
+//   }
+// }
+
+// /*!
+// news
+// ------------------------------
+// */
+// .news {
+//   padding-top: 60px;
+//   padding-bottom: 60px;
+
+//   @include mq(md) {
+//     padding-top: 50px;
+//     padding-bottom: 50px;
+//   }
+// }
+
+// .news__card {
+//   border-radius: 20px;
+//   background: #fff;
+//   box-shadow: 0px 9px 30px 0px #f4f4f4;
+//   padding: 40px 12px;
+
+//   @include mq(md) {
+//     border-radius: 30px;
+//     padding-top: 40px;
+//     padding-bottom: 34px;
+//     padding-left: calc(105px / 1140px * 100%);
+//     padding-right: calc(105px / 1140px * 100%);
+//   }
+// }
+
+// .news__title {
+//   font-family: var(--font-family-en);
+//   font-size: 38px;
+//   font-weight: 700;
+//   line-height: 1;
+//   letter-spacing: 3.8px;
+//   text-align: center;
+
+//   @include mq(md) {
+//     font-size: 50px;
+//     letter-spacing: 5px;
+//     text-align: left;
+//   }
+// }
+
+// .news__lists {
+//   margin-top: 28px;
+
+//   @include mq(md) {
+//     margin-top: 30px;
+//   }
+//   // 子要素の2番目以降の要素に指定
+//   &:nth-child(n + 2) {
+//     position: relative;
+
+//     &::before {
+//       content: "";
+//       position: absolute;
+//       width: 100%;
+//       height: 1px;
+//       top: 0;
+//       left: 0;
+//       background: #e3e3e3;
+//     }
+//   }
+// }
+
+// .news__list {
+//   &:nth-child(n + 2) {
+//     position: relative;
+
+//     &::before {
+//       content: "";
+//       position: absolute;
+//       width: 100%;
+//       height: 1px;
+//       top: 0;
+//       left: 0;
+//       background: #e3e3e3;
+//     }
+//   }
+// }
+
+// .news__link {
+//   text-align: right;
+//   margin-top: 22px;
+
+//   @include mq(md) {
+//     margin-top: 20px;
+//   }
+
+//   a {
+//     font-weight: 700;
+//     line-height: 100%;
+//     display: inline-block;
+//     // currentColor: hover時の色が自動で適用
+//     border-bottom: 2px solid currentColor;
+//     padding-bottom: calc(10px - 2px);
+//     vertical-align: top;
+//     transition: color 0.3s;
+
+//     &:hover {
+//       color: var(--color-yellow);
+//     }
+//   }
+// }
+
+// .news-link {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 7px;
+//   padding-top: 10px;
+//   padding-bottom: 10px;
+//   transition: background-color 0.3s;
+
+//   @include mq(md) {
+//     flex-direction: row;
+//     padding-top: 12px;
+//     padding-bottom: 12px;
+//     gap: 0;
+//   }
+
+//   &:hover {
+//     background-color: #fff9e5;
+//   }
+// }
+
+// .news-link__meta {
+//   display: flex;
+//   align-items: center;
+//   gap: 12px;
+
+//   @include mq(md) {
+//     width: 247px;
+//     // 幅を247px以下にしない設定
+//     flex-shrink: 0;
+//     gap: 14px;
+//   }
+// }
+
+// .news-link__date {
+//   color: #333;
+//   // 改行しない
+//   white-space: nowrap;
+
+//   @include mq(md) {
+//     width: 119px;
+//   }
+// }
+
+// .news-link__label {
+//   color: #fff;
+//   font-size: 11px;
+//   font-weight: 700;
+//   padding: 2px 10px;
+//   border-radius: 2px;
+//   background: #e4780c;
+//   // ラベルの文字数に関係なく最小サイズを指定
+//   min-width: 63px;
+//   text-align: center;
+
+//   &.is-news {
+//     background: #e4780c;
+//   }
+
+//   &.is-column {
+//     background: #ecb815;
+//   }
+
+//   &.is-event {
+//     background: #389b47;
+//   }
+// }
+
+// // 1行に収まらない文字を「…」で省略する方法
+// // .news-link__title {
+// //   white-space: nowrap;
+// //   overflow: hidden;
+// //   text-overflow: ellipsis;
+// // }
+
+// /*!
+// about
+// ------------------------------
+// */
+// .about {
+//   padding-top: 60px;
+//   padding-bottom: 60px;
+//   overflow: hidden;
+
+//   @include mq(md) {
+//     padding-top: 50px;
+//     padding-bottom: 100px;
+//   }
+// }
+
+// .about__inner {
+// }
+
+// .about__title {
+//   text-align: center;
+//   & img {
+//     width: 180px;
+
+//     @include mq(md) {
+//       width: 230px;
+//     }
+//   }
+// }
+
+// .about__content {
+//   margin-top: 150px;
+//   padding-top: 288px;
+//   padding-bottom: 105px;
+//   text-align: center;
+//   position: relative;
+//   z-index: 0;
+
+//   @include mq(md) {
+//     margin-top: 176px;
+//     padding-top: 284px;
+//     padding-bottom: 100px;
+//   }
+
+//   &::before {
+//     content: "";
+//     width: 1100px;
+//     height: 1100px;
+//     border-radius: 50%;
+//     background: var(--color-gradation);
+//     position: absolute;
+//     top: 0;
+//     left: 50%;
+//     transform: translateX(-50%);
+//     z-index: -1;
+
+//     @include mq(md) {
+//       width: 800px;
+//       height: 800px;
+//     }
+//   }
+// }
+
+// .about__img {
+//   position: absolute;
+//   text-align: center;
+//   top: -110px;
+//   left: 0;
+//   width: 100%;
+
+//   @include mq(md) {
+//     top: -126px;
+//   }
+
+//   & img {
+//     width: 320px;
+
+//     @include mq(md) {
+//       width: 330px;
+//     }
+//   }
+// }
+
+// .about__text {
+//   font-weight: 700;
+//   line-height: 2.3;
+// }
+
+// .about__pop {
+//   margin-top: 40px;
+//   font-weight: 700;
+//   line-height: 1;
+//   letter-spacing: 1.28px;
+
+//   @include mq(md) {
+//     margin-top: 42px;
+//   }
+// }
+
+// .about__button {
+//   margin-top: 12px;
+
+//   @include mq(md) {
+//     margin-top: 15px;
+//   }
+// }
+
+// /*!
+// about-modal
+// ------------------------------
+// */
+// .about-modal {
+//   position: fixed;
+//   inset: 0;
+//   margin: auto;
+//   max-width: calc(100% - 15px * 2);
+//   max-height: calc(100% - 20px * 2);
+//   // 枠内に収まらなかった中身はスクロールで表示
+//   overflow: auto;
+//   padding: 16px 15px 64px;
+//   border-radius: 20px;
+//   background: var(--color-white);
+//   border: none;
+//   z-index: 60;
+//   // モーダルをスクロールした時に背面もスクロールされてしまうのを防止
+//   overscroll-behavior-y: none;
+
+//   @include mq(md) {
+//     width: 1140px;
+//     padding: 49px 70px 75px;
+//   }
+
+//   // dialog open時の背景色
+//   &::backdrop {
+//     opacity: 0.2;
+//     background: var(--color-black);
+//   }
+// }
+
+// .about-modal__head {
+//   display: flex;
+//   justify-content: flex-end;
+//   // closeアイコンを上部に固定（スクロールで追従）
+//   position: sticky;
+//   top: 0;
+// }
+
+// .about-modal__close-icon {
+//   & img {
+//     width: 37px;
+//   }
+// }
+
+// .about-modal__body {
+//   margin-top: 12px;
+
+//   @include mq(md) {
+//     margin-top: 43px;
+//   }
+
+//   & p {
+//     font-size: 14px;
+
+//     @include mq(md) {
+//       font-size: 16px;
+//     }
+
+//     &:nth-child(n + 2) {
+//       margin-top: 20px;
+//     }
+//   }
+// }
+
+// .about-modal__close-button {
+//   margin-top: 30px;
+//   text-align: center;
+// }
+
+// /*!
+// movie
+// ------------------------------
+// */
+// .movie {
+//   padding-top: 60px;
+//   padding-bottom: 60px;
+//   background: url(../../images/section-bg.jpg) repeat top left / 529px auto;
+
+//   @include mq(md) {
+//     padding-top: 100px;
+//     padding-bottom: 100px;
+//   }
+// }
+
+// .movie__inner {
+//   padding-left: 15px;
+//   padding-right: 15px;
+// }
+
+// .movie__iframe {
+//   margin-top: 32px;
+//   text-align: center;
+
+//   @include mq(md) {
+//     margin-top: 56px;
+//   }
+
+//   & iframe {
+//     width: 345px;
+//     // 画面幅を小さくした時にはみ出さないように
+//     max-width: 100%;
+//     height: auto;
+//     // 横/縦の比率を保ったままにできる
+//     aspect-ratio: 345 / 194;
+
+//     @include mq(md) {
+//       width: 640px;
+//       aspect-ratio: 640 / 360;
+//     }
+//   }
+// }
+
+// /*!
+// how-to-use
+// ------------------------------
+// */
+// .how-to-use {
+//   padding-top: 60px;
+//   padding-bottom: 60px;
+
+//   @include mq(md) {
+//     padding-top: 100px;
+//     padding-bottom: 100px;
+//   }
+// }
+
+// .how-to-use__inner {
+// }
+
+// .how-to-use__boxes {
+//   margin-top: 104px;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 112px;
+
+//   @include mq(md) {
+//     margin-top: 89px;
+//     gap: 75px;
+//   }
+// }
+
+// .how-to-use__box {
+//   border-radius: 30px;
+//   background: #fffbf0;
+//   padding: 54px 40px 48px;
+
+//   @include mq(md) {
+//     border-radius: 40px;
+//     padding: 44px 10px 56px;
+//   }
+// }
+
+// .how-to-use__box-title {
+//   text-align: center;
+//   font-size: 18px;
+//   font-weight: 700;
+//   letter-spacing: 1.8px;
+//   // イラスト配置の起点として
+//   position: relative;
+
+//   @include mq(md) {
+//     font-size: 22px;
+//     letter-spacing: 2.2px;
+//     // 画像サイズ + gap
+//     padding-right: calc(85px + 10px);
+//     width: fit-content;
+//     margin: 0 auto;
+//   }
+
+//   & img {
+//     position: absolute;
+//     width: 85px;
+//     // PCで右寄せになるのでright起点にする
+//     right: 50%;
+//     // rightを起点に中央寄せ
+//     transform: translateX(50%);
+//     // 下から100％（要素の一番上）+16px上に配置できる
+//     bottom: calc(100% + 16px);
+
+//     @include mq(md) {
+//       right: 0;
+//       transform: translateX(0);
+//       bottom: 0;
+//     }
+//   }
+
+//   .is-type2 & {
+//     @include mq(md) {
+//       padding-right: 0;
+//       padding-left: 95px;
+
+//       & img {
+//         right: auto;
+//         left: 0;
+//       }
+//     }
+//   }
+// }
+
+// .how-to-use__steps {
+//   margin-top: 20px;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 20px;
+
+//   @include mq(md) {
+//     flex-direction: row;
+//     gap: 24px;
+//     max-width: 948px;
+//     margin-top: 40px;
+//     margin-left: auto;
+//     margin-right: auto;
+//   }
+// }
+
+// .how-to-use__step {
+//   // 3つ横並びなので100/3=33.3%
+//   // gap24pxが2つあるので引き、3等分
+//   // width: calc(33.3% - 24px * 2 / 3);
+//   // flex:1でも同様（均等に並べたい要素に指定）
+//   flex: 1;
+// }
+
+// .step-box {
+//   padding-top: 45px;
+//   position: relative;
+// }
+
+// .step-box__head {
+//   display: flex;
+//   align-items: center;
+//   justify-content: center;
+//   flex-direction: column;
+//   gap: 3px;
+//   width: 90px;
+//   height: 90px;
+//   border-radius: 50%;
+//   border: 3px solid var(--color-black);
+//   background: var(--color-orange);
+//   font-family: var(--font-family-en);
+//   line-height: 1;
+//   position: absolute;
+//   top: 0;
+//   left: 50%;
+//   transform: translateX(-50%);
+
+//   .is-type2 & {
+//     background-color: var(--color-yellow);
+//   }
+// }
+
+// .step-box__head-text {
+//   font-size: 13px;
+//   font-weight: 700;
+//   letter-spacing: 1.3px;
+//   text-transform: uppercase;
+// }
+
+// .step-box__head-number {
+//   color: var(--color-white);
+//   font-size: 34px;
+//   font-weight: 700;
+//   letter-spacing: 3.4px;
+// }
+
+// .step-box__body {
+//   border-radius: 30px;
+//   border: 3px solid var(--color-black);
+//   background: var(--color-white);
+//   // 枠の上部が表示されるように
+//   overflow: hidden;
+//   padding: 50px 10px 26px;
+//   text-align: center;
+// }
+
+// .step-box__image {
+//   & img {
+//     width: 160px;
+
+//     @include mq(md) {
+//       width: 200px;
+//     }
+//   }
+// }
+
+// .step-box__text {
+//   font-weight: 700;
+//   letter-spacing: 0.48px;
+//   margin-top: 10px;
+// }
+
+// /*!
+// merit
+// ------------------------------
+// */
+// .merit {
+//   padding-top: 60px;
+//   padding-bottom: 60px;
+
+//   @include mq(md) {
+//     padding-top: 100px;
+//     padding-bottom: 100px;
+//   }
+// }
+
+// .merit__inner {
+// }
+
+// .merit__title {
+// }
+
+// .merit__boxes {
+//   margin-top: 30px;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 30px;
+
+//   @include mq(md) {
+//     margin-top: 60px;
+//     gap: 40px;
+//   }
+// }
+
+// .merit__box {
+// }
+
+// .merit-box {
+//   background-color: var(--color-white);
+//   border-radius: 20px;
+//   padding: 10px 20px 24px;
+// }
+
+// .merit-box__content {
+//   @include mq(md) {
+//     padding: 20px 16px;
+//     display: flex;
+//     align-items: center;
+//     flex-direction: row-reverse;
+//     gap: 50px;
+//     max-width: 920px;
+//     margin: 0 auto;
+//   }
+
+//   .is-reverse & {
+//     @include mq(md) {
+//       flex-direction: row;
+//     }
+//   }
+// }
+
+// .merit_box__img {
+//   text-align: center;
+
+//   @include mq(md) {
+//     width: calc(350px / 920px * 100%);
+//   }
+
+//   & img {
+//     width: 200px;
+
+//     @include mq(md) {
+//       width: 350px;
+//     }
+//   }
+// }
+
+// .merit-box__body {
+//   margin-top: 18px;
+
+//   @include mq(md) {
+//     width: calc(520px / 920px * 100%);
+//     margin-top: 0;
+//   }
+// }
+
+// .merit-box__head {
+//   display: flex;
+//   align-items: center;
+//   gap: 14px;
+//   font-family: var(--font-family-en);
+
+//   @include mq(md) {
+//     gap: 28px;
+//   }
+// }
+
+// .merit-box__number {
+//   color: var(--color-yellow);
+//   font-size: 70px;
+//   font-weight: 600;
+//   line-height: 1;
+
+//   @include mq(md) {
+//     font-size: 110px;
+//   }
+// }
+
+// .merit-box__title {
+//   font-size: 16px;
+//   font-weight: 700;
+//   letter-spacing: 1.6px;
+
+//   @include mq(md) {
+//     font-size: 20px;
+//     letter-spacing: 2px;
+//   }
+// }
+
+// .merit-box__text {
+//   font-size: 14px;
+//   line-height: 2;
+//   margin-top: 10px;
+
+//   @include mq(md) {
+//     font-size: 15px;
+//     margin-top: 16px;
+//   }
+// }
+
+// /*!
+// cta
+// ------------------------------
+// */
+// .cta {
+//   background: var(--color-gradation);
+//   text-align: center;
+//   padding-top: 50px;
+//   padding-bottom: 50px;
+
+//   @include mq(md) {
+//     padding-top: 60px;
+//     padding-bottom: 60px;
+//   }
+// }
+
+// .cta__inner {
+// }
+
+// .cta__text {
+//   font-weight: 700;
+//   line-height: 2;
+//   letter-spacing: 0.48px;
+
+//   @include mq(md) {
+//     font-size: 18px;
+//     letter-spacing: 0.54px;
+//   }
+// }
+
+// .cta__button {
+//   margin-top: 16px;
+// }
+
+// /*!
+// compare
+// ------------------------------
+// */
+// .compare {
+//   padding-top: 60px;
+//   padding-bottom: 60px;
+//   background-color: var(--color-white);
+
+//   @include mq(md) {
+//     padding-top: 100px;
+//     padding-bottom: 100px;
+//   }
+// }
+
+// .compare__inner {
+// }
+
+// .compare__title {
+//   font-size: 20px;
+//   font-weight: 700;
+//   line-height: 1;
+//   text-align: center;
+
+//   @include mq(md) {
+//     font-size: 24px;
+//   }
+// }
+
+// .compare__content {
+//   margin-top: 42px;
+//   // 画面内に入りきらない分はスクロールする
+//   overflow-x: auto;
+//   padding-bottom: 38px;
+
+//   @include mq(md) {
+//     margin-top: 60px;
+//     padding-bottom: 0;
+//   }
+// }
+
+// .compare__table {
+//   width: 620px;
+//   // テーブルセルのサイズを均等に表示（幅を指定しないセルだけ）
+//   table-layout: fixed;
+//   margin-left: auto;
+//   margin-right: auto;
+
+//   @include mq(md) {
+//     width: 1000px;
+//   }
+
+//   th,
+//   td {
+//     text-align: center;
+//     font-weight: 700;
+//     height: 60px;
+//     // テキストを上下中央揃えに
+//     vertical-align: middle;
+
+//     @include mq(md) {
+//       height: 100px;
+//     }
+
+//     &:nth-child(1) {
+//       width: 130px;
+
+//       @include mq(md) {
+//         width: 250px;
+//       }
+//     }
+
+//     &:nth-child(2) {
+//       width: 90px;
+//       background: #fff9e5;
+//       font-size: 16px;
+//       letter-spacing: 0.48px;
+
+//       @include mq(md) {
+//         width: 250px;
+//         font-size: 25px;
+//         letter-spacing: 0.75px;
+//       }
+
+//       img {
+//         width: 70px;
+
+//         @include mq(md) {
+//           width: 123px;
+//         }
+//       }
+//     }
+//   }
+
+//   thead th {
+//     letter-spacing: 1.6px;
+
+//     @include mq(md) {
+//       letter-spacing: 2px;
+//     }
+//   }
+
+//   tbody {
+//     tr {
+//       border-top: 1.5px solid var(--color-black);
+
+//       @include mq(md) {
+//         border-top: 3px solid var(--color-black);
+//       }
+//     }
+
+//     th,
+//     td {
+//       height: calc(60px - 1.5px);
+
+//       @include mq(md) {
+//         height: 100px;
+//       }
+//     }
+//   }
+
+//   th {
+//     letter-spacing: 0.48px;
+
+//     @include mq(md) {
+//       font-size: 20px;
+//       letter-spacing: 0.6px;
+//     }
+//   }
+
+//   td {
+//     font-size: 14px;
+//     letter-spacing: 0.42px;
+
+//     @include mq(md) {
+//       font-size: 16px;
+//       letter-spacing: 0.48px;
+//     }
+//   }
+// }
+
+// .compare__attention {
+//   margin-top: 11px;
+//   color: #686868;
+//   font-size: 14px;
+//   font-weight: 700;
+//   line-height: 1;
+//   text-align: center;
+
+//   @include mq(md) {
+//     display: none;
+//   }
+// }
+
+// /*!
+// qa
+// ------------------------------
+// */
+// .qa {
+//   padding-top: 60px;
+//   padding-bottom: 60px;
+
+//   @include mq(md) {
+//     padding-top: 100px;
+//     padding-bottom: 100px;
+//   }
+// }
+
+// .qa__inner {
+//   @include mq(md) {
+//     // 画面幅を小さくした時の左右余白
+//     padding-left: 30px;
+//     padding-right: 30px;
+//     max-width: calc(800px + 30px * 2);
+//   }
+// }
+
+// .qa__title {
+// }
+
+// .qa__boxes {
+//   margin-top: 52px;
+//   display: flex;
+//   flex-direction: column;
+//   gap: 42px;
+
+//   @include mq(md) {
+//     margin-top: 74px;
+//   }
+// }
+
+// .qa__box {
+// }
+
+// .qa-box {
+//   border-radius: 10px;
+//   border: 3px solid var(--color-black);
+
+//   // アコーディオンが開いている時
+//   &.is-open {
+//     // arrow icon
+//     .qa-box__head::after {
+//       transform: rotate(0deg);
+//     }
+//   }
+// }
+
+// .qa-box__head {
+//   // borderの幅分を引いて余白を調整
+//   padding: calc(32px - 3px) calc(40px - 3px) calc(20px - 3px) calc(15px - 3px);
+//   position: relative;
+//   display: block;
+//   width: 100%;
+
+//   @include mq(md) {
+//     padding: calc(32px - 3px) calc(80px - 3px) calc(20px - 3px) calc(20px - 3px);
+//   }
+
+//   &::after {
+//     content: "";
+//     position: absolute;
+//     top: 50%;
+//     right: 16px;
+//     width: 9.26px;
+//     height: 6.834px;
+//     background: url(../../images/qa-arrow.png) no-repeat center center / contain;
+//     transform: rotate(180deg);
+
+//     @include mq(md) {
+//       right: 22px;
+//     }
+//   }
+// }
+
+// .qa-box__head-icon {
+//   font-family: var(--font-family-en);
+//   font-size: 22px;
+//   font-weight: 700;
+//   line-height: 1;
+//   // letter-spacingでずれた分を修正（スペースが文字の右側にできるため）
+//   letter-spacing: 2.2px;
+//   text-indent: 2.2px;
+//   width: 44px;
+//   height: 44px;
+//   border-radius: 22px;
+//   border: 3px solid var(--color-black);
+//   background: var(--color-orange);
+//   // 上下左右中央揃え
+//   display: grid;
+//   place-items: center;
+//   position: absolute;
+//   top: -26px;
+//   left: 12px;
+
+//   @include mq(md) {
+//     left: 20px;
+//   }
+// }
+
+// .qa-box__head-text {
+//   display: block;
+//   text-align: left;
+//   font-size: 14px;
+//   font-weight: 700;
+//   letter-spacing: 1.12px;
+
+//   @include mq(md) {
+//     font-size: 16px;
+//     line-height: 27px;
+//     letter-spacing: 1.28px;
+//   }
+// }
+
+// .qa-box__body {
+//   // .qa-box__headで削った分3pxを上paddingに足す
+//   padding: calc(10px + 3px) calc(17px - 3px) calc(20px - 3px) calc(15px - 3px);
+//   display: none;
+
+//   @include mq(md) {
+//     padding: calc(0px + 3px) calc(36px - 3px) calc(20px - 3px) calc(20px - 3px);
+//   }
+// }
+
+// .qa-box__a {
+//   display: flex;
+//   gap: 8px;
+
+//   @include mq(md) {
+//     gap: 10px;
+//   }
+// }
+
+// .qa-box__a-icon {
+//   font-family: var(--font-family-en);
+//   font-size: 22px;
+//   font-weight: 700;
+//   line-height: 1;
+//   letter-spacing: 2.2px;
+//   text-indent: 2.2px;
+//   width: 44px;
+//   height: 44px;
+//   border-radius: 22px;
+//   border: 3px solid var(--color-black);
+//   background: var(--color-yellow);
+//   // 上下左右中央揃え
+//   display: grid;
+//   place-items: center;
+//   // flexで自動で潰れないように
+//   flex-shrink: 0;
+// }
+
+// .qa-box__a-text {
+//   display: block;
+//   font-size: 14px;
+//   font-weight: 700;
+//   letter-spacing: 1.12px;
+//   // flexの残りの空間を全て使うように
+//   flex-grow: 1;
+//   padding-top: 8px;
+
+//   @include mq(md) {
+//     font-size: 16px;
+//     line-height: 27px;
+//     letter-spacing: 1.28px;
+//   }
+// }
+
+// /*!
+// gallery
+// ------------------------------
+// */
+// .gallery {
+//   padding-top: 60px;
+//   padding-bottom: 60px;
+
+//   @include mq(md) {
+//     padding-top: 100px;
+//     padding-bottom: 100px;
+//   }
+// }
+
+// .gallery__inner {
+//   @include mq(md) {
+//     padding-left: 30px;
+//     padding-right: 30px;
+//     max-width: calc(800px + 30px * 2);
+//   }
+// }
+
+// .gallery__title {
+// }
+
+// .gallery__slider {
+//   margin-top: 30px;
+
+//   @include mq(md) {
+//     margin-top: 60px;
+//   }
+// }
+
+// .gallery__swiper {
+//   // 枠からページネーションの距離16px + ページネーションの高さ10px
+//   padding-bottom: calc(16px + 10px);
+//   padding-left: 5px;
+//   padding-right: 5px;
+//   z-index: 0;
+
+//   @include mq(md) {
+//     padding-left: calc(20px + 50px);
+//     padding-right: calc(20px + 50px);
+//   }
+// }
+
+// .gallery__slide {
+// }
+
+// .gallery-card {
+//   border-radius: 20px;
+//   border: 3px solid var(--color-black);
+//   background: var(--color-white);
+//   box-shadow: 0px 9px 30px 0px #f4f4f4;
+//   padding: 15px 15px 11px 15px;
+
+//   @include mq(md) {
+//     border-radius: 30px;
+//     padding: 20px 20px 18px 20px;
+//   }
+// }
+
+// .gallery-card__image {
+//   text-align: center;
+//   & img {
+//     border-radius: 10px;
+
+//     @include mq(md) {
+//       border-radius: 20px;
+//     }
+//   }
+// }
+
+// .gallery-card__text {
+//   margin-top: 11px;
+//   text-align: center;
+//   font-size: 14px;
+
+//   @include mq(md) {
+//     margin-top: 18px;
+//     font-size: 16px;
+//   }
+// }
+
+// .gallery__pagination {
+//   display: flex;
+//   justify-content: center;
+//   gap: 12px;
+//   bottom: 0 !important;
+// }
+
+// .swiper-pagination-bullet {
+//   width: 10px;
+//   height: 10px;
+//   margin-left: 0 !important;
+//   margin-right: 0 !important;
+//   background: #bcbcbc;
+//   opacity: 1;
+
+//   &.swiper-pagination-bullet-active {
+//     background: var(--color-yellow);
+//   }
+// }
+
+// .gallery__prev,
+// .gallery__next {
+//   width: 40px;
+//   height: 40px;
+//   margin-top: -40px;
+
+//   @include mq(md) {
+//     width: 50px;
+//     height: 50px;
+//   }
+
+//   &::after {
+//     // swiperデフォルトの矢印を削除
+//     display: none;
+//   }
+// }
+
+// .gallery__prev {
+//   left: 0;
+//   background: url(../../images/prev-icon.png) no-repeat center center / contain;
+// }
+
+// .gallery__next {
+//   right: 0;
+//   background: url(../../images/next-icon.png) no-repeat center center / contain;
+// }
+
+// /*!
+// contact
+// ------------------------------
+// */
+
+// .contact {
+//   padding-top: 60px;
+//   padding-bottom: 60px;
+//   background: url(../../images/section-bg.jpg) repeat top left / 529px auto;
+
+//   @include mq(md) {
+//     padding-top: 100px;
+//     padding-bottom: 100px;
+//   }
+// }
+
+// .contact__inner {
+// }
+
+// .contact__box {
+//   border-radius: 30px;
+//   background: var(--color-white);
+//   padding: 60px 20px;
+
+//   @include mq(md) {
+//     // レスポンシブ時に影響ない範囲でパディング確保
+//     padding-left: 30px;
+//     padding-right: 30px;
+//   }
+// }
+
+// .contact__title {
+// }
+
+// .contact__form {
+//   margin-top: 30px;
+
+//   @include mq(md) {
+//     margin-top: 50px;
+//     // レスポンシブ崩れ防止用
+//     max-width: 612px;
+//     margin-left: auto;
+//     margin-right: auto;
+//   }
+// }
+
+// .contact__fields {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 30px;
+// }
+
+// .contact__field {
+// }
+
+// .contact__privacy {
+//   margin-top: 30px;
+//   text-align: center;
+// }
+
+// .contact__button {
+//   margin-top: 30px;
+//   text-align: center;
+
+//   @include mq(md) {
+//     margin-top: 38px;
+//   }
+// }
+
+// /*!
+// form-field（フォーム内パーツ）
+// ------------------------------
+// */
+// .form-field {
+//   @include mq(md) {
+//     display: flex;
+//     gap: 32px;
+//   }
+// }
+
+// .form-field__head {
+//   font-weight: 700;
+//   display: flex;
+//   align-items: center;
+//   gap: 10px;
+
+//   @include mq(md) {
+//     // gap分を引いた幅
+//     width: calc(212px - 32px);
+//     // 指定した幅より小さくしない
+//     flex-shrink: 0;
+//     justify-content: flex-end;
+//   }
+// }
+
+// .form-field__label {
+//   line-height: calc(23px / 16px); // 23px
+// }
+
+// .form-field__tag {
+//   border-radius: 2px;
+//   background: #ee8013;
+//   display: inline-block;
+//   padding: 6px 8px 5px 8px;
+//   font-size: 11px;
+//   line-height: 1;
+//   letter-spacing: 1.98px;
+//   color: var(--color-white);
+
+//   &.is-option {
+//     background: #43b549;
+//   }
+// }
+
+// .form-field__item {
+//   margin-top: 14px;
+//   // flexで並べた要素の残りの幅全てを確保
+//   flex-grow: 1;
+
+//   @include mq(md) {
+//     margin-top: 0;
+//   }
+// }
+
+// .form-field__radios {
+//   display: flex;
+//   flex-direction: column;
+//   gap: 18px;
+
+//   @include mq(md) {
+//     flex-direction: row;
+//     gap: 30px;
+//   }
+// }

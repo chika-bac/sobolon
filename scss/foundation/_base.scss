@@ -1,0 +1,19 @@
+@use "../global" as *;
+
+/*!
+foundation > base
+------------------------------
+*/
+
+// スムーススクロール用（JSなし）
+// html {
+//   scroll-behavior: smooth;
+// }
+
+body {
+  line-height: var(--line-height-base);
+  font-family: var(--font-family-base);
+  font-size: var(--font-size-base);
+  color: var(--color-font);
+  background-color: var(--color-base);
+}

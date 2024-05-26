@@ -1,0 +1,40 @@
+@use "../global" as *;
+
+/*!
+component > heading
+------------------------------
+*/
+// .heading {
+//   text-align: center;
+//   font-family: var(--font-family-en);
+
+//   & span {
+//     display: block;
+//   }
+// }
+
+// .heading-en {
+//   font-size: 38px;
+//   font-weight: 700;
+//   line-height: 1;
+//   letter-spacing: 3.8px;
+//   text-transform: uppercase;
+
+//   @include mq(md) {
+//     font-size: 50px;
+//     letter-spacing: 5px;
+//   }
+// }
+
+// .heading-ja {
+//   font-size: 14px;
+//   font-weight: 400;
+//   line-height: 1;
+//   letter-spacing: 1.12px;
+//   margin-top: 14px;
+
+//   @include mq(md) {
+//     font-size: 16px;
+//     letter-spacing: 1.28px;
+//   }
+// }
