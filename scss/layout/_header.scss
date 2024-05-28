@@ -5,6 +5,12 @@ layout > header
 ------------------------------
 */
 .header {
+  position: sticky;
+  top: 0;
+  left: 0;
+  z-index: 99;
+  width: 100%;
+  background: var(--color-base);
 }
 
 .header__inner {
@@ -24,26 +30,11 @@ layout > header
 }
 
 .header__logo {
-  width: 120px;
-  height: 22px;
+  & img {
+    width: 120px;
+    height: 22px;
+  }
 }
-
-// .header__logo {
-//   @include mq(md) {
-//     padding-top: 6px;
-//   }
-
-//   a {
-//     img {
-//       width: 100px;
-//       display: block;
-
-//       @include mq(md) {
-//         width: 135px;
-//       }
-//     }
-//   }
-// }
 
 .header__nav {
   display: none;
@@ -56,63 +47,42 @@ layout > header
 }
 
 .header__link {
+  transition: color 0.3s;
+
+  &:hover {
+    color: var(--color-main);
+  }
 }
-
-// .header__link {
-//   font-weight: 700;
-//   letter-spacing: 0.48px;
-//   transition: color 0.3s;
-
-//   &:hover {
-//     color: var(--color-orange);
-//   }
-// }
-
-.header__open {
-}
-
-// .header__open {
-//   margin-top: 3px;
-
-//   @include mq(md) {
-//     display: none;
-//   }
-// }
 
 .drawer-icon {
   width: 30px;
   height: 18px;
   position: relative;
   z-index: 51;
+
+  @include mq(md) {
+    display: none;
+  }
+
+  &.is-checked {
+    .drawer-icon__bar {
+      // background: var(--color-base);
+      &:nth-of-type(1) {
+        top: 11px;
+        transform: rotate(44.904deg);
+      }
+
+      &:nth-of-type(2) {
+        display: none;
+      }
+
+      &:nth-of-type(3) {
+        top: 11px;
+        transform: rotate(-44.89deg);
+      }
+    }
+  }
 }
-
-// .drawer-icon {
-//   width: 36px;
-//   height: 21px;
-//   position: relative;
-//   z-index: 51;
-
-//   // アイコンがクリックされた時×になる
-// &.is-checked {
-//   .drawer-icon__bar {
-//     &:nth-of-type(1) {
-//       // 回転の起点をアイコンの真ん中（アイコンサイズが21pxなので上から10px付近）にする
-//       top: 10px;
-//       transform: rotate(30deg);
-//     }
-
-//     &:nth-of-type(2) {
-//       display: none;
-//     }
-
-//     &:nth-of-type(3) {
-//       // 回転の起点をアイコンの真ん中にする
-//       top: 10px;
-//       transform: rotate(-30deg);
-//     }
-//   }
-// }
-// }
 
 .drawer-icon__bar {
   position: absolute;
@@ -121,8 +91,7 @@ layout > header
   width: 30px;
   height: 2px;
   background: var(--color-main);
-  //   // transformとtopプロパティにアニメーションを適用
-  //   transition: transform 0.3s linear, top 0.3s linear;
+  transition: transform 0.3s linear, top 0.3s linear;
 
   &:nth-of-type(1) {
   }
@@ -136,63 +105,36 @@ layout > header
   }
 }
 
-// .drawer-icon__bar {
-//   position: absolute;
-//   top: 0;
-//   left: 0;
-//   width: 36px;
-//   height: 3px;
-//   border-radius: 6px;
-//   background: var(--color-black);
-
-//   &:nth-of-type(1) {
-//   }
-
-//   &:nth-of-type(2) {
-//     top: 9px;
-//   }
-
-//   &:nth-of-type(3) {
-//     top: 18px;
-//   }
-// }
-
 // /*!
 // layout > header > drawer
 // ------------------------------
 // */
-// .drawer-content {
-//   width: 320px;
-//   height: 100%;
-//   position: fixed;
-//   top: 0;
-//   right: 0;
-//   background: #f7ba1a;
-//   z-index: 50;
-//   padding: 86px 40px 40px;
-//   // 初期は画面外に移動
-//   transform: translateX(100%);
-//   transition: transform 0.3s linear;
+.drawer-panel {
+  position: fixed;
+  top: 60px;
+  right: 0;
+  z-index: 50;
+  width: 270px;
+  height: 100vh;
+  padding: 40px 15px;
+  background: var(--color-main);
+  // 100%画面外に配置
+  transform: translateX(100%);
+  transition: transform 0.3s linear;
 
-//   &.is-checked {
-//     transform: translateX(0);
-//   }
-// }
+  &.is-checked {
+    transform: translateX(0);
+  }
+}
 
-// .drawer-content-menu {
-// }
+.drawer-content-menu {
+  display: flex;
+  flex-direction: column;
+  gap: 32px;
+}
 
-// .drawer-content__link {
-//   display: block;
-//   padding-top: 14px;
-//   padding-bottom: 14px;
-//   text-align: right;
-//   font-weight: 700;
-//   line-height: 1.7;
-//   letter-spacing: 0.48px;
-// }
-
-// .drawer-content__button {
-//   margin-top: 14px;
-//   text-align: right;
-// }
+.drawer-content__link {
+  text-align: right;
+  font-size: 18px;
+  color: var(--color-base);
+}
