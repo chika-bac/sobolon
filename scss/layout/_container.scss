@@ -5,15 +5,31 @@ layout > container
 ------------------------------
 */
 
-// .inner {
-//   padding-left: 15px;
-//   padding-right: 15px;
+.section {
+  padding-top: 96px;
 
-//   @include mq(md) {
-//     padding-left: 30px;
-//     padding-right: 30px;
-//     max-width: calc(var(--width-inner) + 30px * 2);
-//     margin-left: auto;
-//     margin-right: auto;
-//   }
-// }
+  @include mq(md) {
+    padding-top: 160px;
+  }
+}
+
+.inner{
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @include mq(md) {
+    padding-left: 40px;
+    padding-right: 40px;
+    max-width: calc(var(--width-inner) + 40px * 2);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.contents-top{
+  margin-top: calc(46px + 28px);
+
+  @include mq(md) {
+    margin-top: calc(64px + 24px);
+  }
+}
