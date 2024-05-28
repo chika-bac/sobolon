@@ -5,18 +5,18 @@
 //   outline: 2px solid blue;
 // }
 
-// .hidden-sp {
-//   display: none;
-//   @include mq(md) {
-//     display: inline-block;
-//   }
-// }
+.hidden-sp {
+  display: none;
+  @include mq(md) {
+    display: inline-block;
+  }
+}
 
-// .hidden-pc {
-//   @include mq(md) {
-//     display: none;
-//   }
-// }
+.hidden-pc {
+  @include mq(md) {
+    display: none;
+  }
+}
 
 // .inline-block {
 //   // 幅を小さくしたときに改行する位置を指定（htmlで）
@@ -49,135 +49,156 @@
 // mv
 // ------------------------------
 // */
-// .mv {
-//   border-radius: 20px;
-//   // 最大幅は左右の余白15pxを確保した幅にする
-//   max-width: calc(100% - 15px * 2);
-//   margin-left: auto;
-//   margin-right: auto;
-//   background: var(--color-gradation);
+.mv {
+  margin-left: auto;
+  margin-right: auto;
+}
 
-//   @include mq(md) {
-//     border-radius: 30px;
-//     max-width: calc(100% - 30px * 2);
-//   }
-// }
+.mv__inner {
+  padding-left: 15px;
+  padding-right: 15px;
+  display: flex;
+  flex-direction: column-reverse;
+  gap: 30px;
 
-// .mv__inner {
-//   padding: 50px 20px 255px;
-//   // 画像の位置配置のため
-//   position: relative;
+  @include mq(md) {
+    flex-direction: row;
+    align-items: center;
+    padding-right: 40px;
+    padding-left: 0;
+    gap: 0;
+    position: relative;
+    max-width: calc(1200px + 40px * 2);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
 
-//   @include mq(md) {
-//     padding-top: 110px;
-//     padding-bottom: 109px;
-//     padding-left: 30px;
-//     padding-right: 30px;
-//     max-width: calc(1040px + 30px * 2);
-//     margin-left: auto;
-//     margin-right: auto;
-//   }
-// }
+.mv__img {
+  @include mq(md) {
+  }
+  & img {
+    @include mq(md) {
+      width: 990px;
+      height: 660px;
+    }
+  }
+}
 
-// .mv__content {
-// }
+.mv__content {
+}
 
-// .mv__lead {
-// }
+.mv__lead {
+  @include mq(md) {
+    padding: 80px 40px;
+    background: var(--color-base);
+  }
+}
 
-// .mv__lead1,
-// .mv__lead2 {
-//   // 「」の文字詰め用
-//   font-feature-settings: "palt" on;
-//   font-size: 22px;
-//   font-weight: 700;
-//   line-height: 1;
-//   letter-spacing: 2.2px;
-//   border-radius: 5px;
-//   background: #fff;
-//   padding: 10px;
-//   display: block;
-//   // 文字のサイズに応じて幅が可変
-//   width: fit-content;
-//   margin-left: auto;
-//   margin-right: auto;
+.mv__lead1,
+.mv__lead2 {
+  display: block;
+}
 
-//   @include mq(md) {
-//     margin-left: 0;
-//     margin-right: 0;
-//     font-size: 38px;
-//     letter-spacing: 3.8px;
-//     padding: 12px 16px;
-//   }
-// }
+.mv__lead1 {
+  font-size: 26px;
+  font-weight: 600;
+}
 
-// .mv__lead1 {
-// }
-
-// .mv__lead2 {
-//   margin-top: 8px;
-
-//   @include mq(md) {
-//     margin-top: 14px;
-//   }
-// }
-
-// .mv__description {
-//   text-align: center;
-//   letter-spacing: 0.48px;
-//   font-weight: 700;
-//   margin-top: 26px;
-
-//   @include mq(md) {
-//     text-align: left;
-//     font-size: 18px;
-//     letter-spacing: 0.54px;
-//     margin-top: 20px;
-//   }
-// }
-
-// .mv__button {
-//   margin-top: 22px;
-//   text-align: center;
-
-//   @include mq(md) {
-//     text-align: left;
-//     margin-top: 30px;
-//   }
-// }
-
-// .mv__image {
-//   position: absolute;
-//   right: 0;
-//   bottom: -108px;
-//   width: 100%;
-//   text-align: center;
-
-//   @include mq(md) {
-//     width: calc(600px / 1040px * 100%);
-//     text-align: right;
-//     bottom: -88px;
-//     right: 30px;
-//   }
-
-//   img {
-//     width: 345px;
-
-//     @include mq(md) {
-//       // width: 600px;
-//       // 画像の最大幅を600pxに制限
-//       max-width: 600px;
-//       width: 100%;
-//       // アスペクト比を維持したまま幅に合わせて高さを自動調整
-//       height: auto;
-//     }
-//   }
-// }
+.mv__lead2 {
+  margin-top: 16px;
+  white-space: nowrap;
+}
 
 // /*!
-// case
+// concept
 // ------------------------------
 // */
+.concept {
+  padding-top: 96px;
+
+  @include mq(md) {
+    padding-top: 160px;
+  }
+}
+
+.concept__inner {
+  padding-left: 15px;
+  padding-right: 15px;
+
+  @include mq(md) {
+    padding-left: 40px;
+    padding-right: 40px;
+    max-width: calc(var(--width-inner) + 40px * 2);
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+
+.concept__title {
+  font-size: 30px;
+  font-weight: 600;
+  line-height: 1;
+  position: relative;
+  text-align: center;
+
+  @include mq(md) {
+    font-size: 40px;
+  }
+
+  &::after {
+    content: "";
+    position: absolute;
+    bottom: -28px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+    height: 1px;
+    background: var(--color-main);
+
+    @include mq(md) {
+      bottom: -24px;
+    }
+  }
+}
+
+.concept__contents {
+  margin-top: calc(46px + 28px);
+  display: flex;
+  flex-direction: column;
+  gap: 34px;
+
+  @include mq(md) {
+    margin-top: calc(64px + 24px);
+    flex-direction: row;
+    align-items: center;
+  }
+
+  @include mq(lg) {
+    gap: calc(80px / 1200px * 100%);
+  }
+}
+
+.concept__image {
+}
+
+.concept__texts {
+  display: flex;
+  flex-direction: column;
+  gap: 22px;
+
+  @include mq(lg) {
+    gap: 40px;
+  }
+}
+
+.concept__text-main {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.concept__text-sub {
+}
 // .case {
 //   margin-top: 108px;
 //   padding-top: 60px;
