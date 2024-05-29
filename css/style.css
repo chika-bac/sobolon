@@ -590,4 +590,39 @@ feature
   padding-bottom: 26px;
   text-align: center;
   font-weight: 600;
+}
+
+/*!
+question
+------------------------------
+*/
+.question {
+  margin-top: 96px;
+  width: 100vw;
+  background: url(../../images/bg-sp@2x.png) no-repeat top left/cover;
+  color: var(--color-base);
+  position: relative;
+  z-index: 0;
+}
+.question::before {
+  position: absolute;
+  inset: 0;
+  content: "";
+  background: rgba(0, 0, 0, 0.12);
+  z-index: -1;
+}
+
+.question__inner {
+  padding: 180px 15px 50px 15px;
+}
+
+.question__title {
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.question__text {
+  margin-top: 24px;
+  font-size: 14px;
+  font-weight: 600;
 }/*# sourceMappingURL=style.css.map */
