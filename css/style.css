@@ -196,6 +196,27 @@ body {
 component > button
 ------------------------------
 */
+.button {
+  display: block;
+  width: 158px;
+  padding: 12px 4px;
+  color: var(--color-main);
+  font-size: 14px;
+  letter-spacing: 0.02px;
+  text-align: center;
+  background-color: var(--color-base);
+  border: 1px solid var(--color-main);
+  -webkit-transition: all 0.3s;
+  transition: all 0.3s;
+  margin-left: auto;
+  margin-right: auto;
+}
+.button:hover {
+  cursor: pointer;
+  background-color: var(--color-main);
+  color: var(--color-base);
+}
+
 /*!
 component > heading
 ------------------------------
@@ -574,7 +595,7 @@ feature
     gap: 40px;
   }
 }
-@media screen and (min-width: 992px) {
+@media screen and (min-width: 1200px) {
   .feature__contents {
     gap: 90px;
   }
@@ -604,6 +625,12 @@ question
   position: relative;
   z-index: 0;
 }
+@media screen and (min-width: 768px) {
+  .question {
+    margin-top: 160px;
+    background: url(../../images/bg-pc@2x.png) no-repeat center/cover;
+  }
+}
 .question::before {
   position: absolute;
   inset: 0;
@@ -615,14 +642,93 @@ question
 .question__inner {
   padding: 180px 15px 50px 15px;
 }
+@media screen and (min-width: 768px) {
+  .question__inner {
+    padding: 123px 40px 122px 40px;
+  }
+}
 
 .question__title {
   font-size: 20px;
   font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .question__title {
+    font-size: 22px;
+  }
 }
 
 .question__text {
   margin-top: 24px;
   font-size: 14px;
   font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .question__text {
+    font-size: 16px;
+  }
+}
+
+/*!
+products
+------------------------------
+*/
+.products__inner {
+  padding-inline: 56px;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media screen and (min-width: 768px) {
+  .products__inner {
+    max-width: 1020px;
+    padding-inline: 40px;
+  }
+}
+
+.products__items {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 40px;
+}
+@media screen and (min-width: 768px) {
+  .products__items {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
+  }
+}
+@media screen and (min-width: 992px) {
+  .products__items {
+    gap: 80px;
+  }
+}
+
+.products__texts {
+  font-size: 14px;
+  margin-top: 20px;
+}
+@media screen and (min-width: 768px) {
+  .products__texts {
+    margin-top: 18px;
+  }
+}
+
+.products__price {
+  margin-top: 10px;
+  color: #989898;
+}
+
+.products__button {
+  margin-top: 42px;
+}
+@media screen and (min-width: 768px) {
+  .products__button {
+    margin-top: 44px;
+  }
 }/*# sourceMappingURL=style.css.map */

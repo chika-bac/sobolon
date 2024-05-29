@@ -182,7 +182,7 @@ feature
     gap: 40px;
   }
 
-  @include mq(lg) {
+  @include mq(xl) {
     gap: 90px;
   }
 }
@@ -217,6 +217,11 @@ question
   position: relative;
   z-index: 0;
 
+  @include mq(md) {
+    margin-top: 160px;
+    background: url(../../images/bg-pc@2x.png) no-repeat center / cover;
+  }
+
   &::before {
     position: absolute;
     inset: 0;
@@ -231,414 +236,99 @@ question
   // position: relative;
   // z-index: 1;
   // background: transparent;
+
+  @include mq(md) {
+    padding: 123px 40px 122px 40px;
+  }
 }
 
 .question__title {
   font-size: 20px;
   font-weight: 600;
+
+  @include mq(md) {
+    font-size: 22px;
+  }
 }
 
 .question__text {
   margin-top: 24px;
   font-size: 14px;
   font-weight: 600;
+
+  @include mq(md) {
+    font-size: 16px;
+  }
 }
 
-// .news {
-//   padding-top: 60px;
-//   padding-bottom: 60px;
+/*!
+products
+------------------------------
+*/
+.products {
+}
 
-//   @include mq(md) {
-//     padding-top: 50px;
-//     padding-bottom: 50px;
-//   }
-// }
+.products__inner {
+  padding-inline: 56px;
+  margin-left: auto;
+  margin-right: auto;
 
-// .news__card {
-//   border-radius: 20px;
-//   background: #fff;
-//   box-shadow: 0px 9px 30px 0px #f4f4f4;
-//   padding: 40px 12px;
+  @include mq(md) {
+    max-width: calc(940px + 40px * 2);
+    padding-inline: 40px;
+  }
+}
 
-//   @include mq(md) {
-//     border-radius: 30px;
-//     padding-top: 40px;
-//     padding-bottom: 34px;
-//     padding-left: calc(105px / 1140px * 100%);
-//     padding-right: calc(105px / 1140px * 100%);
-//   }
-// }
+.products__title {
+}
 
-// .news__title {
-//   font-family: var(--font-family-en);
-//   font-size: 38px;
-//   font-weight: 700;
-//   line-height: 1;
-//   letter-spacing: 3.8px;
-//   text-align: center;
+.products__items {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
 
-//   @include mq(md) {
-//     font-size: 50px;
-//     letter-spacing: 5px;
-//     text-align: left;
-//   }
-// }
+  @include mq(md) {
+    flex-direction: row;
+  }
 
-// .news__lists {
-//   margin-top: 28px;
+  @include mq(lg) {
+    gap: 80px;
+  }
+}
 
-//   @include mq(md) {
-//     margin-top: 30px;
-//   }
-//   // 子要素の2番目以降の要素に指定
-//   &:nth-child(n + 2) {
-//     position: relative;
+.products__item {
+}
 
-//     &::before {
-//       content: "";
-//       position: absolute;
-//       width: 100%;
-//       height: 1px;
-//       top: 0;
-//       left: 0;
-//       background: #e3e3e3;
-//     }
-//   }
-// }
+.products__link {
+}
 
-// .news__list {
-//   &:nth-child(n + 2) {
-//     position: relative;
+.products__image {
+}
 
-//     &::before {
-//       content: "";
-//       position: absolute;
-//       width: 100%;
-//       height: 1px;
-//       top: 0;
-//       left: 0;
-//       background: #e3e3e3;
-//     }
-//   }
-// }
+.products__texts {
+  font-size: 14px;
+  margin-top: 20px;
 
-// .news__link {
-//   text-align: right;
-//   margin-top: 22px;
+  @include mq(md) {
+    margin-top: 18px;
+  }
+}
 
-//   @include mq(md) {
-//     margin-top: 20px;
-//   }
+.products__name {
+}
 
-//   a {
-//     font-weight: 700;
-//     line-height: 100%;
-//     display: inline-block;
-//     // currentColor: hover時の色が自動で適用
-//     border-bottom: 2px solid currentColor;
-//     padding-bottom: calc(10px - 2px);
-//     vertical-align: top;
-//     transition: color 0.3s;
+.products__price {
+  margin-top: 10px;
+  color: #989898;
+}
 
-//     &:hover {
-//       color: var(--color-yellow);
-//     }
-//   }
-// }
+.products__button {
+  margin-top: 42px;
 
-// .news-link {
-//   display: flex;
-//   flex-direction: column;
-//   gap: 7px;
-//   padding-top: 10px;
-//   padding-bottom: 10px;
-//   transition: background-color 0.3s;
-
-//   @include mq(md) {
-//     flex-direction: row;
-//     padding-top: 12px;
-//     padding-bottom: 12px;
-//     gap: 0;
-//   }
-
-//   &:hover {
-//     background-color: #fff9e5;
-//   }
-// }
-
-// .news-link__meta {
-//   display: flex;
-//   align-items: center;
-//   gap: 12px;
-
-//   @include mq(md) {
-//     width: 247px;
-//     // 幅を247px以下にしない設定
-//     flex-shrink: 0;
-//     gap: 14px;
-//   }
-// }
-
-// .news-link__date {
-//   color: #333;
-//   // 改行しない
-//   white-space: nowrap;
-
-//   @include mq(md) {
-//     width: 119px;
-//   }
-// }
-
-// .news-link__label {
-//   color: #fff;
-//   font-size: 11px;
-//   font-weight: 700;
-//   padding: 2px 10px;
-//   border-radius: 2px;
-//   background: #e4780c;
-//   // ラベルの文字数に関係なく最小サイズを指定
-//   min-width: 63px;
-//   text-align: center;
-
-//   &.is-news {
-//     background: #e4780c;
-//   }
-
-//   &.is-column {
-//     background: #ecb815;
-//   }
-
-//   &.is-event {
-//     background: #389b47;
-//   }
-// }
-
-// // 1行に収まらない文字を「…」で省略する方法
-// // .news-link__title {
-// //   white-space: nowrap;
-// //   overflow: hidden;
-// //   text-overflow: ellipsis;
-// // }
-
-// /*!
-// about
-// ------------------------------
-// */
-// .about {
-//   padding-top: 60px;
-//   padding-bottom: 60px;
-//   overflow: hidden;
-
-//   @include mq(md) {
-//     padding-top: 50px;
-//     padding-bottom: 100px;
-//   }
-// }
-
-// .about__inner {
-// }
-
-// .about__title {
-//   text-align: center;
-//   & img {
-//     width: 180px;
-
-//     @include mq(md) {
-//       width: 230px;
-//     }
-//   }
-// }
-
-// .about__content {
-//   margin-top: 150px;
-//   padding-top: 288px;
-//   padding-bottom: 105px;
-//   text-align: center;
-//   position: relative;
-//   z-index: 0;
-
-//   @include mq(md) {
-//     margin-top: 176px;
-//     padding-top: 284px;
-//     padding-bottom: 100px;
-//   }
-
-//   &::before {
-//     content: "";
-//     width: 1100px;
-//     height: 1100px;
-//     border-radius: 50%;
-//     background: var(--color-gradation);
-//     position: absolute;
-//     top: 0;
-//     left: 50%;
-//     transform: translateX(-50%);
-//     z-index: -1;
-
-//     @include mq(md) {
-//       width: 800px;
-//       height: 800px;
-//     }
-//   }
-// }
-
-// .about__img {
-//   position: absolute;
-//   text-align: center;
-//   top: -110px;
-//   left: 0;
-//   width: 100%;
-
-//   @include mq(md) {
-//     top: -126px;
-//   }
-
-//   & img {
-//     width: 320px;
-
-//     @include mq(md) {
-//       width: 330px;
-//     }
-//   }
-// }
-
-// .about__text {
-//   font-weight: 700;
-//   line-height: 2.3;
-// }
-
-// .about__pop {
-//   margin-top: 40px;
-//   font-weight: 700;
-//   line-height: 1;
-//   letter-spacing: 1.28px;
-
-//   @include mq(md) {
-//     margin-top: 42px;
-//   }
-// }
-
-// .about__button {
-//   margin-top: 12px;
-
-//   @include mq(md) {
-//     margin-top: 15px;
-//   }
-// }
-
-// /*!
-// about-modal
-// ------------------------------
-// */
-// .about-modal {
-//   position: fixed;
-//   inset: 0;
-//   margin: auto;
-//   max-width: calc(100% - 15px * 2);
-//   max-height: calc(100% - 20px * 2);
-//   // 枠内に収まらなかった中身はスクロールで表示
-//   overflow: auto;
-//   padding: 16px 15px 64px;
-//   border-radius: 20px;
-//   background: var(--color-white);
-//   border: none;
-//   z-index: 60;
-//   // モーダルをスクロールした時に背面もスクロールされてしまうのを防止
-//   overscroll-behavior-y: none;
-
-//   @include mq(md) {
-//     width: 1140px;
-//     padding: 49px 70px 75px;
-//   }
-
-//   // dialog open時の背景色
-//   &::backdrop {
-//     opacity: 0.2;
-//     background: var(--color-black);
-//   }
-// }
-
-// .about-modal__head {
-//   display: flex;
-//   justify-content: flex-end;
-//   // closeアイコンを上部に固定（スクロールで追従）
-//   position: sticky;
-//   top: 0;
-// }
-
-// .about-modal__close-icon {
-//   & img {
-//     width: 37px;
-//   }
-// }
-
-// .about-modal__body {
-//   margin-top: 12px;
-
-//   @include mq(md) {
-//     margin-top: 43px;
-//   }
-
-//   & p {
-//     font-size: 14px;
-
-//     @include mq(md) {
-//       font-size: 16px;
-//     }
-
-//     &:nth-child(n + 2) {
-//       margin-top: 20px;
-//     }
-//   }
-// }
-
-// .about-modal__close-button {
-//   margin-top: 30px;
-//   text-align: center;
-// }
-
-// /*!
-// movie
-// ------------------------------
-// */
-// .movie {
-//   padding-top: 60px;
-//   padding-bottom: 60px;
-//   background: url(../../images/section-bg.jpg) repeat top left / 529px auto;
-
-//   @include mq(md) {
-//     padding-top: 100px;
-//     padding-bottom: 100px;
-//   }
-// }
-
-// .movie__inner {
-//   padding-left: 15px;
-//   padding-right: 15px;
-// }
-
-// .movie__iframe {
-//   margin-top: 32px;
-//   text-align: center;
-
-//   @include mq(md) {
-//     margin-top: 56px;
-//   }
-
-//   & iframe {
-//     width: 345px;
-//     // 画面幅を小さくした時にはみ出さないように
-//     max-width: 100%;
-//     height: auto;
-//     // 横/縦の比率を保ったままにできる
-//     aspect-ratio: 345 / 194;
-
-//     @include mq(md) {
-//       width: 640px;
-//       aspect-ratio: 640 / 360;
-//     }
-//   }
-// }
+  @include mq(md) {
+    margin-top: 44px;
+  }
+}
 
 // /*!
 // how-to-use
