@@ -853,4 +853,63 @@ news
   .news__button {
     margin-top: 44px;
   }
+}
+
+/*!
+motto
+------------------------------
+*/
+.motto__inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  gap: 32px;
+}
+@media screen and (min-width: 768px) {
+  .motto__inner {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: reverse;
+        -ms-flex-direction: row-reverse;
+            flex-direction: row-reverse;
+    gap: 40px;
+    -webkit-box-align: center;
+        -ms-flex-align: center;
+            align-items: center;
+  }
+}
+@media screen and (min-width: 992px) {
+  .motto__inner {
+    gap: 80px;
+  }
+}
+
+.motto__title {
+  font-size: 20px;
+  font-weight: 600;
+}
+@media screen and (min-width: 768px) {
+  .motto__title {
+    font-size: 28px;
+    white-space: nowrap;
+  }
+}
+
+.motto__text {
+  margin-top: 22px;
+  font-size: 14px;
+}
+@media screen and (min-width: 768px) {
+  .motto__text {
+    margin-top: 12px;
+    font-size: 16px;
+  }
+}
+@media screen and (min-width: 992px) {
+  .motto__text {
+    margin-top: 36px;
+  }
 }/*# sourceMappingURL=style.css.map */
