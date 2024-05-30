@@ -179,27 +179,17 @@ component > input > checkbox
 
   // チェックボックスの外枠
   &::before {
-    // border-radius: 1px;
     border: 1px solid var(--color-main);
     width: 22px;
     height: 22px;
-
-    @include mq(md) {
-      // margin-top: 2px;
-    }
   }
   // チェックボックスの中のチェック
   &::after {
     width: 19.414px;
     height: 14.621px;
     left: 1px;
-    // margin-bottom: 1.2px;
     background: url(../../images/check-icon.png) no-repeat center center / contain;
     opacity: 0;
-
-    @include mq(md) {
-      // margin-top: 0.8px;
-    }
   }
 
   & a {
