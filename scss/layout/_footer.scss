@@ -20,6 +20,14 @@ layout > footer
 .footer___logo {
   width: 120px;
   margin-inline: auto;
+
+  img {
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
 }
 
 .footer__nav {
@@ -40,6 +48,14 @@ layout > footer
 
 .footer__link {
   font-size: 12px;
+
+  @include mq(md) {
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.6;
+    }
+  }
 }
 
 .footer__sns {
@@ -63,6 +79,14 @@ layout > footer
   & i {
     color: var(--color-main);
     font-size: 18px;
+  }
+
+  @include mq(md) {
+    transition: opacity 0.3s;
+
+    &:hover {
+      opacity: 0.6;
+    }
   }
 }
 

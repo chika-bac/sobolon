@@ -6,9 +6,15 @@ foundation > base
 */
 
 // スムーススクロール用（JSなし）
-// html {
-//   scroll-behavior: smooth;
-// }
+html {
+  scroll-behavior: smooth;
+  // 移動先がヘッダーの後ろになるのを防止するためヘッダーの高さを考慮
+  // scroll-padding-top: 60px;
+
+  // @include mq(md) {
+  //   scroll-padding-top: 70px;
+  // }
+}
 
 body {
   line-height: var(--line-height-base);

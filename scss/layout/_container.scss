@@ -6,7 +6,7 @@ layout > container
 */
 
 .section {
-  padding-top: 96px;
+  padding-top: 95px;
 
   @include mq(md) {
     padding-top: 160px;
@@ -14,8 +14,8 @@ layout > container
 }
 
 .inner{
-  padding-left: 15px;
-  padding-right: 15px;
+  padding-inline: 15px;
+
 
   @include mq(md) {
     padding-left: 40px;
