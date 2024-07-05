@@ -462,7 +462,7 @@ component > input > checkbox
   width: 19.414px;
   height: 14.621px;
   left: 1px;
-  background: url(../../images/check-icon.png) no-repeat center center/contain;
+  background: url(../images/check-icon.png) no-repeat center center/contain;
   opacity: 0;
 }
 .form-checkbox__text a {
@@ -912,7 +912,7 @@ question
 .question {
   margin-top: 96px;
   width: 100vw;
-  background: url(../../images/bg-sp@2x.png) no-repeat top center/cover;
+  background: url(../images/bg-sp@2x.png) no-repeat top center/cover;
   color: var(--color-base);
   position: relative;
   z-index: 0;
@@ -920,7 +920,7 @@ question
 @media screen and (min-width: 768px) {
   .question {
     margin-top: 160px;
-    background-image: url(../../images/bg-pc@2x.png);
+    background-image: url(../images/bg-pc@2x.png);
   }
 }
 .question::after {
@@ -1240,13 +1240,13 @@ contact
 ------------------------------
 */
 .contact__inner {
-  background: url(../../images/contact_bg-sp@2x.png) no-repeat top center/cover;
+  background: url(../images/contact_bg-sp@2x.png) no-repeat top center/cover;
   padding-top: 56px;
   padding-bottom: 56px;
 }
 @media screen and (min-width: 768px) {
   .contact__inner {
-    background-image: url(../../images/contact_bg-pc@2x.png);
+    background-image: url(../images/contact_bg-pc@2x.png);
     padding-top: 80px;
     padding-bottom: 80px;
     padding-left: 0;
