@@ -91,8 +91,8 @@ concept
   }
 }
 
-.concept__image {
-}
+// .concept__image {
+// }
 
 .concept__texts {
   display: flex;
@@ -107,23 +107,24 @@ concept
 .concept__text-main {
   font-size: 20px;
   font-weight: 600;
+  white-space: nowrap;
 }
 
-.concept__text-sub {
-}
+// .concept__text-sub {
+// }
 
 /*!
 feature
 ------------------------------
 */
-.feature {
-}
+// .feature {
+// }
 
-.feature__inner {
-}
+// .feature__inner {
+// }
 
-.feature__title {
-}
+// .feature__title {
+// }
 
 .feature__contents {
   display: grid;
@@ -181,10 +182,8 @@ question
     left: 0;
     width: 100%;
     height: 100%;
-    // inset: 0;
     content: "";
     background: rgba(0, 0, 0, 0.12);
-    // z-index: -1;
     z-index: 1;
   }
 }
@@ -202,6 +201,7 @@ question
 .question__title {
   font-size: 20px;
   font-weight: 600;
+  white-space: nowrap;
 
   @include mq(md) {
     font-size: 22px;
@@ -222,8 +222,8 @@ question
 products
 ------------------------------
 */
-.products {
-}
+// .products {
+// }
 
 .products__inner {
   padding-inline: 56px;
@@ -236,8 +236,8 @@ products
   }
 }
 
-.products__title {
-}
+// .products__title {
+// }
 
 .products__items {
   display: flex;
@@ -265,8 +265,8 @@ products
   }
 }
 
-.products__link {
-}
+// .products__link {
+// }
 
 .products__image {
   // マウスホバーで拡大時にはみ出さない様に
@@ -286,8 +286,8 @@ products
   }
 }
 
-.products__name {
-}
+// .products__name {
+// }
 
 .products__price {
   margin-top: 10px;
@@ -306,8 +306,8 @@ products
 news
 ------------------------------
 */
-.news {
-}
+// .news {
+// }
 
 .news__inner {
   @include mq(md) {
@@ -350,8 +350,8 @@ news
   }
 }
 
-.news__link {
-}
+// .news__link {
+// }
 
 .news__image {
   @include mq(md) {
@@ -421,8 +421,8 @@ news
 motto
 ------------------------------
 */
-.motto {
-}
+// .motto {
+// }
 
 .motto__inner {
   display: flex;
@@ -440,11 +440,11 @@ motto
   }
 }
 
-.motto__image {
-}
+// .motto__image {
+// }
 
-.motto__texts {
-}
+// .motto__texts {
+// }
 
 .motto__title {
   font-size: 20px;
@@ -473,8 +473,8 @@ motto
 contact
 ------------------------------
 */
-.contact {
-}
+// .contact {
+// }
 
 .contact__inner {
   background: url(../../images/contact_bg-sp@2x.png) no-repeat top center / cover;
@@ -521,8 +521,8 @@ contact
   }
 }
 
-.contact__fields {
-}
+// .contact__fields {
+// }
 
 .contact__field {
   display: flex;
@@ -533,6 +533,7 @@ contact
 .contact__privacy {
   margin-top: 28px;
   font-size: 16px;
+  text-align: center;
 
   @include mq(md) {
     margin-top: 32px;

@@ -147,8 +147,8 @@ component > input > textarea
 component > input > checkbox
 ------------------------------
 */
-.form-checkbox {
-}
+// .form-checkbox {
+// }
 
 .form-checkbox__input {
   // デフォルトcheckboxを非表示に
@@ -178,6 +178,7 @@ component > input > checkbox
 .form-checkbox__text {
   position: relative;
   padding-left: calc(22px + 8px);
+  white-space: nowrap;
 
   // チェックボックス作成
   &::before,
