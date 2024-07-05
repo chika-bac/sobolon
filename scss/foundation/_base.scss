@@ -23,4 +23,9 @@ body {
   color: var(--color-font);
   background-color: var(--color-base);
   font-weight: 300;
+
+  // メニューopen時にスクロール禁止
+  &.isScrollAllowed {
+    overflow: hidden;
+  }
 }
